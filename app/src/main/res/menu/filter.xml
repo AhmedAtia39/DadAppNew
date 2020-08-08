@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_name"
+        android:orderInCategory="100"
+        android:title="search"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    <item
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:orderInCategory="100"
+        android:title="add"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="edit"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="delete"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+</menu>

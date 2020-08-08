@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "904692530962",
+    "firebase_url": "https://dadapp-405ef.firebaseio.com",
+    "project_id": "dadapp-405ef",
+    "storage_bucket": "dadapp-405ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904692530962:android:a3ba551cc3c510682d7dcb",
+        "android_client_info": {
+          "package_name": "net.senior.dadapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904692530962-h9mfp70dlfo88e5n7010a0g5s4d66hu5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.senior.dadapp",
+            "certificate_hash": "4b16803992b77fe4cdea164db4b1a3660e05b9aa"
+          }
+        },
+        {
+          "client_id": "904692530962-gcj0qdekthe6jpa77655iqe3qmc8rpjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_S9GpULhnarzWAjfw7mR-J6e-iCz-80c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904692530962-gcj0qdekthe6jpa77655iqe3qmc8rpjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
