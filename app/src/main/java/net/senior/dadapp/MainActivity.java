@@ -1,40 +1,23 @@
 package net.senior.dadapp;
 
-import android.Manifest;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,24 +30,17 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.RuntimePermissions;
+import static net.senior.dadapp.HomeFragment.folderAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     DatabaseReference database;
     private SearchView searchView;
 ArrayList<String> foldersModel;
-    private FolderAdapter foldersAdapter;
+    //    private FolderAdapter foldersAdapter;
     HomeFragment home;
     Bundle bundle;
     private UploadTask uploadTask;
@@ -83,14 +59,13 @@ ArrayList<String> foldersModel;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 foldersModel.clear();
-                for(DataSnapshot d:snapshot.getChildren())
-                {
+                for(DataSnapshot d:snapshot.getChildren()) {
                     foldersModel.add(d.getKey());
-                foldersAdapter=new FolderAdapter(foldersModel);
-                    bundle.putSerializable("list", (Serializable) foldersModel);
+//                foldersAdapter=new FolderAdapter(foldersModel);
+                    bundle.putSerializable("list", foldersModel);
                     home = new HomeFragment();
                     home.setArguments(bundle);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container,home).commitAllowingStateLoss();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, home).commitAllowingStateLoss();
 
                 }
 
@@ -190,8 +165,8 @@ ArrayList<String> foldersModel;
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (foldersAdapter != null)
-                    foldersAdapter.getFilter().filter(newText);
+                if (folderAdapter != null)
+                    folderAdapter.getFilter().filter(newText);
                 return false;
             }
         });

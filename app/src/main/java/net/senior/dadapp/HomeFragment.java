@@ -2,14 +2,13 @@ package net.senior.dadapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,7 @@ public class HomeFragment extends Fragment {
 
     View v;
     RecyclerView rec;
-    FolderAdapter folderAdapter;
+    public static FolderAdapter folderAdapter;
     FoldersModel foldersModel;
     List<String> list;
 
